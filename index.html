@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tu Clima · Pronóstico por ciudad con Open-Meteo</title>
+    <meta
+      name="description"
+      content="Consulta la temperatura, humedad y precipitación actuales de cualquier ciudad del mundo usando las APIs gratuitas de Open-Meteo."
+    />
+    <meta name="theme-color" content="#7fd0f7" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌤️</text></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="sky">
+    <!-- Escena decorativa -->
+    <div class="scene" aria-hidden="true">
+      <div class="scene__sun"></div>
+
+      <svg class="scene__cloud scene__cloud--1" viewBox="0 0 200 80">
+        <g fill="currentColor">
+          <circle cx="60" cy="48" r="26" />
+          <circle cx="100" cy="36" r="32" />
+          <circle cx="142" cy="48" r="26" />
+          <rect x="40" y="48" width="125" height="26" rx="13" />
+        </g>
+      </svg>
+      <svg class="scene__cloud scene__cloud--2" viewBox="0 0 200 80">
+        <g fill="currentColor">
+          <circle cx="60" cy="48" r="26" />
+          <circle cx="100" cy="36" r="32" />
+          <circle cx="142" cy="48" r="26" />
+          <rect x="40" y="48" width="125" height="26" rx="13" />
+        </g>
+      </svg>
+      <svg class="scene__cloud scene__cloud--3" viewBox="0 0 200 80">
+        <g fill="currentColor">
+          <circle cx="60" cy="48" r="26" />
+          <circle cx="100" cy="36" r="32" />
+          <circle cx="142" cy="48" r="26" />
+          <rect x="40" y="48" width="125" height="26" rx="13" />
+        </g>
+      </svg>
+
+      <svg class="scene__hills" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path class="hill--3" d="M0,200 C240,120 480,260 720,200 C960,140 1200,240 1440,180 L1440,320 L0,320 Z" />
+        <path class="hill--2" d="M0,240 C200,180 420,290 700,240 C980,190 1200,280 1440,230 L1440,320 L0,320 Z" />
+        <path class="hill--1" d="M0,285 C260,240 520,310 800,280 C1060,250 1240,300 1440,275 L1440,320 L0,320 Z" />
+      </svg>
+    </div>
+
+    <div class="aurora" aria-hidden="true">
+      <span class="aurora__blob aurora__blob--1"></span>
+      <span class="aurora__blob aurora__blob--2"></span>
+      <span class="aurora__blob aurora__blob--3"></span>
+    </div>
+
+    <main class="app">
+      <header class="hero">
+        <h1 class="hero__title">Tu <span class="gradient-text">Clima</span></h1>
+        <p class="hero__subtitle">
+          Escribe una ciudad y obtén su temperatura, humedad y precipitación actuales.
+        </p>
+      </header>
+
+      <section class="panel" aria-label="Búsqueda de clima">
+        <div id="search-container"></div>
+
+        <div id="loading-indicator"></div>
+        <div id="error-message"></div>
+      </section>
+
+      <section id="weather-display" aria-live="polite"></section>
+
+      <footer class="footer">
+        Datos de <a href="https://open-meteo.com" target="_blank" rel="noopener noreferrer">Open-Meteo.com</a>
+      </footer>
+    </main>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

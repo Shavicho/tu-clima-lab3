@@ -1,0 +1,23 @@
+{
+  "name": "weather-forecast-app",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "SPA que consulta el clima actual de una ciudad usando las APIs de Open-Meteo",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest --run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^10.4.0",
+    "fast-check": "^3.23.0",
+    "jsdom": "^25.0.1",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.10",
+    "vitest": "^2.1.4"
+  }
+}
